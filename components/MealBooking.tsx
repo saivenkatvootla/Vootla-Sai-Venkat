@@ -49,8 +49,8 @@ const MealBooking: React.FC = () => {
             <button
               key={date}
               onClick={() => setSelectedDate(date)}
-              className={`flex flex-col items-center min-w-[60px] p-2 rounded-xl border transition-all ${
-                isSelected ? 'bg-primary-600 text-white border-primary-600 shadow-md' : 'bg-white text-gray-600 border-gray-200'
+              className={`flex flex-col items-center min-w-[60px] p-2 rounded-xl border transition-all duration-200 hover:scale-105 active:scale-95 ${
+                isSelected ? 'bg-primary-600 text-white border-primary-600 shadow-md scale-105' : 'bg-white text-gray-600 border-gray-200 hover:border-gray-300'
               }`}
             >
               <span className="text-xs font-medium opacity-80">{day}</span>
@@ -66,7 +66,7 @@ const MealBooking: React.FC = () => {
           <button
             key={type}
             onClick={() => setSelectedType(type as any)}
-            className={`flex-1 py-2 text-sm font-medium rounded-md capitalize transition-all ${
+            className={`flex-1 py-2 text-sm font-medium rounded-md capitalize transition-all duration-200 hover:scale-[1.03] active:scale-95 ${
               selectedType === type ? 'bg-white text-primary-700 shadow-sm' : 'text-gray-500 hover:text-gray-700'
             }`}
           >
@@ -80,7 +80,7 @@ const MealBooking: React.FC = () => {
         {filteredMeals.map(meal => {
           const booked = isMealBooked(meal.id);
           return (
-            <div key={meal.id} className={`flex bg-white p-3 rounded-2xl shadow-sm border ${booked ? 'border-green-400 bg-green-50' : 'border-gray-100'}`}>
+            <div key={meal.id} className={`flex bg-white p-3 rounded-2xl shadow-sm border transition-all hover:shadow-md ${booked ? 'border-green-400 bg-green-50' : 'border-gray-100'}`}>
               <img src={meal.image} alt={meal.name} className="w-24 h-24 rounded-xl object-cover" />
               <div className="ml-4 flex-1 flex flex-col justify-between py-1">
                 <div>
@@ -97,7 +97,7 @@ const MealBooking: React.FC = () => {
                   </span>
                   <button
                     onClick={() => handleBook(meal)}
-                    className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors flex items-center ${
+                    className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 flex items-center hover:scale-105 active:scale-95 hover:shadow-md ${
                       booked 
                       ? 'bg-green-100 text-green-700 hover:bg-green-200' 
                       : 'bg-primary-600 text-white hover:bg-primary-700'

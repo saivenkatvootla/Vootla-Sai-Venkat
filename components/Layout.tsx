@@ -27,12 +27,12 @@ const Layout: React.FC<LayoutProps> = ({ children, currentView, setView }) => {
           className="text-left focus:outline-none group"
           aria-label="Go to Home"
         >
-          <h1 className="text-xl font-bold text-gray-800 tracking-tight group-hover:opacity-80 transition-opacity">
+          <h1 className="text-xl font-bold text-gray-800 tracking-tight transition-transform duration-200 group-hover:scale-105 origin-left">
             Uni<span className="text-primary-600">Life</span>
           </h1>
           <p className="text-xs text-gray-500">Dorm & Campus Companion</p>
         </button>
-        <div className="h-8 w-8 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 font-bold text-sm">
+        <div className="h-8 w-8 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 font-bold text-sm transform transition-transform hover:scale-110 cursor-default">
           JD
         </div>
       </header>
@@ -51,7 +51,7 @@ const Layout: React.FC<LayoutProps> = ({ children, currentView, setView }) => {
             <button
               key={item.id}
               onClick={() => setView(item.id)}
-              className={`flex flex-col items-center justify-center w-full h-full space-y-1 transition-colors duration-200 ${
+              className={`flex flex-col items-center justify-center w-full h-full space-y-1 transition-all duration-200 hover:scale-110 active:scale-90 ${
                 isActive ? 'text-primary-600' : 'text-gray-400 hover:text-gray-600'
               }`}
             >

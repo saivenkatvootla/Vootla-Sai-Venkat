@@ -58,13 +58,13 @@ const Support: React.FC = () => {
       <div className="flex border-b border-gray-200 bg-white">
         <button
           onClick={() => setTab('faq')}
-          className={`flex-1 py-4 text-sm font-medium text-center border-b-2 transition-colors ${tab === 'faq' ? 'border-primary-600 text-primary-600' : 'border-transparent text-gray-500'}`}
+          className={`flex-1 py-4 text-sm font-medium text-center border-b-2 transition-all ${tab === 'faq' ? 'border-primary-600 text-primary-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:scale-105'}`}
         >
           Dorm Assistant
         </button>
         <button
           onClick={() => setTab('issue')}
-          className={`flex-1 py-4 text-sm font-medium text-center border-b-2 transition-colors ${tab === 'issue' ? 'border-primary-600 text-primary-600' : 'border-transparent text-gray-500'}`}
+          className={`flex-1 py-4 text-sm font-medium text-center border-b-2 transition-all ${tab === 'issue' ? 'border-primary-600 text-primary-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:scale-105'}`}
         >
           Report Issue
         </button>
@@ -76,13 +76,13 @@ const Support: React.FC = () => {
           <div className="h-full flex flex-col">
              {/* Quick Actions */}
              <div className="px-4 py-3 bg-white border-b border-gray-100 flex gap-2 overflow-x-auto no-scrollbar">
-                <button onClick={() => setInput("What is the WiFi password?")} className="flex items-center space-x-1 px-3 py-1.5 bg-gray-100 rounded-full text-xs font-medium text-gray-600 whitespace-nowrap hover:bg-gray-200">
+                <button onClick={() => setInput("What is the WiFi password?")} className="flex items-center space-x-1 px-3 py-1.5 bg-gray-100 rounded-full text-xs font-medium text-gray-600 whitespace-nowrap hover:bg-gray-200 transition-all hover:scale-105 active:scale-95">
                    <Wifi size={12} /> <span>WiFi</span>
                 </button>
-                <button onClick={() => setInput("What are the quiet hours?")} className="flex items-center space-x-1 px-3 py-1.5 bg-gray-100 rounded-full text-xs font-medium text-gray-600 whitespace-nowrap hover:bg-gray-200">
+                <button onClick={() => setInput("What are the quiet hours?")} className="flex items-center space-x-1 px-3 py-1.5 bg-gray-100 rounded-full text-xs font-medium text-gray-600 whitespace-nowrap hover:bg-gray-200 transition-all hover:scale-105 active:scale-95">
                    <Volume2 size={12} /> <span>Quiet Hours</span>
                 </button>
-                <button onClick={() => setInput("Guest policy?")} className="flex items-center space-x-1 px-3 py-1.5 bg-gray-100 rounded-full text-xs font-medium text-gray-600 whitespace-nowrap hover:bg-gray-200">
+                <button onClick={() => setInput("Guest policy?")} className="flex items-center space-x-1 px-3 py-1.5 bg-gray-100 rounded-full text-xs font-medium text-gray-600 whitespace-nowrap hover:bg-gray-200 transition-all hover:scale-105 active:scale-95">
                    <Moon size={12} /> <span>Guests</span>
                 </button>
              </div>
@@ -129,7 +129,7 @@ const Support: React.FC = () => {
                 <button 
                   onClick={handleSendMessage}
                   disabled={isLoading || !input.trim()}
-                  className="ml-2 p-1.5 bg-primary-600 rounded-full text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="ml-2 p-1.5 bg-primary-600 rounded-full text-white disabled:opacity-50 disabled:cursor-not-allowed transition-transform hover:scale-110 active:scale-90 hover:shadow-md"
                 >
                   <Send size={14} />
                 </button>
@@ -154,7 +154,7 @@ const Support: React.FC = () => {
               <button 
                 onClick={handleDraftReport}
                 disabled={isDrafting || !issueText}
-                className="flex items-center justify-center w-full py-2.5 bg-gray-900 text-white rounded-xl text-sm font-medium hover:bg-gray-800 transition-colors disabled:opacity-50"
+                className="flex items-center justify-center w-full py-2.5 bg-gray-900 text-white rounded-xl text-sm font-medium hover:bg-gray-800 transition-all hover:scale-[1.02] active:scale-95 hover:shadow-lg disabled:opacity-50 disabled:transform-none"
               >
                 {isDrafting ? 'Drafting...' : <><PenTool size={14} className="mr-2" /> Draft Message with AI</>}
               </button>
@@ -167,10 +167,10 @@ const Support: React.FC = () => {
                   {draftedEmail}
                 </div>
                 <div className="flex space-x-3 pt-2">
-                   <button className="flex-1 py-2.5 bg-primary-600 text-white rounded-xl text-sm font-medium hover:bg-primary-700">
+                   <button className="flex-1 py-2.5 bg-primary-600 text-white rounded-xl text-sm font-medium hover:bg-primary-700 transition-all hover:scale-[1.02] active:scale-95 hover:shadow-lg">
                       Send to Manager
                    </button>
-                   <button onClick={() => setDraftedEmail('')} className="px-4 py-2.5 bg-gray-100 text-gray-600 rounded-xl text-sm font-medium hover:bg-gray-200">
+                   <button onClick={() => setDraftedEmail('')} className="px-4 py-2.5 bg-gray-100 text-gray-600 rounded-xl text-sm font-medium hover:bg-gray-200 transition-all hover:scale-105 active:scale-95">
                       Clear
                    </button>
                 </div>

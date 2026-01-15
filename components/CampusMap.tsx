@@ -42,7 +42,7 @@ const CampusMap: React.FC = () => {
           <button
             key={marker.id}
             onClick={() => setActiveMarker(marker)}
-            className={`absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ${activeMarker?.id === marker.id ? 'scale-125 z-20' : 'hover:scale-110 z-10'}`}
+            className={`absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ${activeMarker?.id === marker.id ? 'scale-125 z-20' : 'hover:scale-110 z-10 active:scale-90'}`}
             style={{ left: `${marker.x}%`, top: `${marker.y}%` }}
           >
             <div className={`
@@ -79,12 +79,12 @@ const CampusMap: React.FC = () => {
             </div>
             <button 
               onClick={() => setActiveMarker(null)}
-              className="text-gray-400 hover:text-gray-600 bg-gray-50 rounded-full p-1"
+              className="text-gray-400 hover:text-gray-600 bg-gray-50 rounded-full p-1 transition-transform hover:scale-110 active:scale-90 hover:bg-gray-100"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
           </div>
-          <button className="w-full mt-4 bg-primary-600 text-white font-medium py-2.5 rounded-xl hover:bg-primary-700 transition-colors">
+          <button className="w-full mt-4 bg-primary-600 text-white font-medium py-2.5 rounded-xl hover:bg-primary-700 transition-all hover:scale-[1.02] active:scale-95 hover:shadow-lg">
             Get Directions
           </button>
         </div>
